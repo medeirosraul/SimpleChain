@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34707.107
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleChain", "SimpleChain\SimpleChain.csproj", "{70D1F2B7-0AB0-4771-BC7A-CB9250017D3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChainApiSample", "Samples\ChainApiSample\ChainApiSample.csproj", "{8071567A-549F-4971-8C93-38E959B0799B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{E8DEEFD8-7D16-4C9B-8734-E4F3A6C0AB05}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70D1F2B7-0AB0-4771-BC7A-CB9250017D3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70D1F2B7-0AB0-4771-BC7A-CB9250017D3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70D1F2B7-0AB0-4771-BC7A-CB9250017D3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70D1F2B7-0AB0-4771-BC7A-CB9250017D3D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8071567A-549F-4971-8C93-38E959B0799B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8071567A-549F-4971-8C93-38E959B0799B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8071567A-549F-4971-8C93-38E959B0799B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8071567A-549F-4971-8C93-38E959B0799B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8071567A-549F-4971-8C93-38E959B0799B} = {E8DEEFD8-7D16-4C9B-8734-E4F3A6C0AB05}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {43713CB5-666D-4D41-B2D9-EB9B490CD967}
+	EndGlobalSection
+EndGlobal
