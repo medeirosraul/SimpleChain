@@ -4,7 +4,7 @@
     /// Chain Container Options.
     /// </summary>
     /// <typeparam name="T">Type of Handler input.</typeparam>
-    public class ChainContainerOptions<T>
+    public class ChainOptions<T>
     {
         private readonly List<Type> _handlersTypes = new List<Type>();
 
@@ -12,7 +12,7 @@
         /// Add a handler to the chain.
         /// </summary>
         /// <typeparam name="THandler">Handler Type.</typeparam>
-        public ChainContainerOptions<T> AddHandler<THandler>()
+        public ChainOptions<T> AddHandler<THandler>()
             where THandler : class, IChainHandler<T>
         {
             _handlersTypes.Add(typeof(THandler));

@@ -7,12 +7,12 @@ namespace SimpleChain
     /// A chain container that executes a chain of handlers.
     /// </summary>
     /// <typeparam name="T">Type of input.</typeparam>
-    public class ChainContainer<T>
+    public class Chain<T>
     {
         private readonly IServiceProvider _serviceProvider;
-        private readonly ChainContainerOptions<T> _options;
+        private readonly ChainOptions<T> _options;
 
-        public ChainContainer(IServiceProvider serviceProvider, IOptions<ChainContainerOptions<T>> options)
+        public Chain(IServiceProvider serviceProvider, IOptions<ChainOptions<T>> options)
         {
             _serviceProvider = serviceProvider;
             _options = options.Value;

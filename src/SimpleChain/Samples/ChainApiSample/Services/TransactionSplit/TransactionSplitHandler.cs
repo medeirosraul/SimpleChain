@@ -5,9 +5,9 @@ namespace ChainApiSample.Services.TransactionSplit
 {
     public class TransactionSplitHandler : ChainHandler<Transaction>
     {
-        private readonly ChainContainer<Split> _splitChain;
+        private readonly Chain<Split> _splitChain;
 
-        public TransactionSplitHandler(ChainContainer<Split> splitChain)
+        public TransactionSplitHandler(Chain<Split> splitChain)
         {
             _splitChain = splitChain;
         }

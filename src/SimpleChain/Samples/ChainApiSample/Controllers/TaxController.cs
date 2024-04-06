@@ -10,10 +10,10 @@ namespace ChainApiSample.Controllers
     public class TaxController : ControllerBase
     {
         private readonly ILogger<TaxController> _logger;
-        private readonly ChainContainer<ProductModel> _productTaxChain;
-        private readonly ChainContainer<Transaction> _transactionChain;
+        private readonly Chain<ProductModel> _productTaxChain;
+        private readonly Chain<Transaction> _transactionChain;
 
-        public TaxController(ILogger<TaxController> logger, ChainContainer<ProductModel> productTaxChain, ChainContainer<Transaction> transactionChain)
+        public TaxController(ILogger<TaxController> logger, Chain<ProductModel> productTaxChain, Chain<Transaction> transactionChain)
         {
             _logger = logger;
             _productTaxChain = productTaxChain;
@@ -40,6 +40,25 @@ namespace ChainApiSample.Controllers
             await _transactionChain.ExecuteAsync(transaction);
 
             return Ok(transaction);
+        }
+
+        [HttpGet("SimulateSplitLoad")]
+        public async Task<IActionResult> LoadTest()
+        {
+            var count = 0;
+            for (var i = 0; i < 100000; i++)
+            {
+                var transaction = new Transaction
+                {
+                    Id = Guid.NewGuid().ToString(),
+                    Amount = Convert.ToDecimal(new Random().NextDouble() * 1000)
+                };
+
+                await _transactionChain.ExecuteAsync(transaction);
+                count++;
+            }
+
+            return Ok(count);
         }
     }
 }

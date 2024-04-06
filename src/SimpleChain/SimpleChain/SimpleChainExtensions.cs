@@ -6,17 +6,17 @@ namespace SimpleChain
     public static class SimpleChainExtensions
     {
         /// <summary>
-        /// Add a scoped <see cref="ChainContainer{T}"/> to the service collection.
+        /// Add a scoped <see cref="Chain{T}"/> to the service collection.
         /// </summary>
         /// <typeparam name="T">Type of Handler input.</typeparam>
-        public static IServiceCollection AddChainFor<T>(this IServiceCollection services, Action<ChainContainerOptions<T>> configure)
+        public static IServiceCollection AddChainFor<T>(this IServiceCollection services, Action<ChainOptions<T>> configure)
         {
             // Add configuration and the ChainContainer of type T to the service collection.
-            services.AddScoped<ChainContainer<T>>();
+            services.AddScoped<Chain<T>>();
             services.Configure(configure);
 
             // A configuration with least one handler is required.
-            var options = new ChainContainerOptions<T>();
+            var options = new ChainOptions<T>();
 
             configure(options);
 
